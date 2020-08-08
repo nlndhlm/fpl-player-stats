@@ -42,3 +42,5 @@ for i in data['elements']:
 
 # Closing file
 w.close()
+
+print("Complete")
