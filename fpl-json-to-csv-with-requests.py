@@ -28,7 +28,7 @@ data = f
   
 
 # Heading for csv-file
-print('First name, Second name, Element type, Cost start, Now cost, Total points, Minutes, Goals scored, Assists, Clean sheets, Bonus')
+#print('First name, Second name, Element type, Cost start, Now cost, Total points, Minutes, Goals scored, Assists, Clean sheets, Bonus')
 writer.writerow(['First name', 'Second name', 'Element type', 'Cost start', 'Now cost', 'Total points', 'Minutes', 'Goals scored', 'Assists', 'Clean sheets', 'Bonus'])
 
 # Iterating through the json 
@@ -36,7 +36,7 @@ writer.writerow(['First name', 'Second name', 'Element type', 'Cost start', 'Now
 for i in data['elements']: 
     dataline = i['first_name'], i['second_name'], i['element_type'], (i['now_cost'] + i['cost_change_start_fall']) / 10, i['now_cost'] / 10, i['total_points'], i['minutes'], i['goals_scored'], i['assists'], i['clean_sheets'], i['bonus']
     
-    print(dataline)
+    #print(dataline)
     writer.writerow(dataline)
 
 
