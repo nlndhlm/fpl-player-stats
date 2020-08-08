@@ -1,19 +1,24 @@
 # read fantasy api
 # convert to csv-file
+# saves csv to file
 # API found at: https://fantasy.premierleague.com/api/bootstrap-static/
 
 import requests
 import json
 import csv
 
-r = requests.get('https://fantasy.premierleague.com/api/bootstrap-static/')
+
+# API address:
+url = 'https://fantasy.premierleague.com/api/bootstrap-static/'
+
+r = requests.get(url)
 
 # Turn request into json
 f = r.text
 f = r.json()
 
 # Creating and opening csv-file for writing
-w = open('datafile2.csv', 'w')
+w = open('fpl_player_stats.csv', 'w')
 
 writer = csv.writer(w)
   
@@ -35,5 +40,5 @@ for i in data['elements']:
     writer.writerow(dataline)
 
 
-# Closing files
+# Closing file
 w.close()
